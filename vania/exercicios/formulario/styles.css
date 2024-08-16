@@ -1,0 +1,44 @@
+.container-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100vh;
+	margin: 0 auto;
+}
+
+.logo {
+	max-width: 75px;
+	width: 100%;
+	border-radius: 5px;
+}
+
+.logo, .mensagem {
+	display: flex;
+	align-items: center;
+}
+
+.container-main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 100px;
+}
+
+.container-main input,button {
+	width: 298px;
+}
+
+.container-main input, label {
+	margin: 3px;
+}
+
+.container-main select, button {
+	width: 309px;
+}
+
+.button {
+	padding: 8px;
+	background-color: rgb(0, 153, 93);
+	border: none;
+	color: #fff;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>Formulário Unimed</title>
+</head>
+<body>
+    <header class="container-header">
+        <img class="logo" src="logo.png" alt="Logo Unimed">
+        <p class="mensagem">Bem vindo, Usuário</p>
+    </header>
+    
+    <main class="container-main"> 
+        <form id="myForm" action="inserir_cliente.php" method="POST">
+            <label for="nome">Nome:</label><br>
+            <input type="text" id="nome" name="nome" required><br>
+     
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            
+            <label for="possui_plano">Possui Plano de Saúde?</label><br>
+            <select id="possui_plano" name="possui_plano" required>
+                <option value="S">Sim</option>
+                <option value="N">Não</option>
+            </select><br>
+
+            <label for="plano" id="healthPlanLabel" style="display: none;">Qual o nome do plano de saúde?</label>
+            <input type="text" id="plano" name="plano" style="display: none;"><br>
+            
+            <button class="button" type="submit">Enviar</button>
+        </form>
+    </main>
+
+    <script>
+        function validateForm(e) {
+            e.preventDefault();
+            
+            const nome = document.getElementById("nome").value;
+            
+            if (nome.length < 10 || nome.length > 80) {
+                alert("Nome inválido! O nome deve ter entre 10 e 80 caracteres.");
+                return false;
+            }
+            
+            alert("Formulário enviado com sucesso!");
+            return true;
+        }
+        
+        document.getElementById("myForm").addEventListener("submit", validateForm);
+
+        function hasHealthPlan() {
+            const options = document.getElementById("possui_plano").value;
+            const healthPlanLabel = document.getElementById("healthPlanLabel");
+            const healthPlanInput = document.getElementById("plano");
+
+            if (options === 'S') {
+                healthPlanLabel.style.display = "block";
+                healthPlanInput.style.display = "block";
+            } else {
+                healthPlanLabel.style.display = "none";
+                healthPlanInput.style.display = "none";
+            }
+        }
+
+        document.getElementById("possui_plano").addEventListener("change", hasHealthPlan);
+    </script>
+</body>
+</html>
