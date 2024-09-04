@@ -1,3 +1,4 @@
+<?php
 class Cliente {
     private $nome;
     private $email;
@@ -27,3 +28,5 @@ class Cliente {
         return $this->nomePlano;
     }
 }
+
+?>
