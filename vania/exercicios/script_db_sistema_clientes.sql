@@ -13,4 +13,4 @@ CREATE TABLE clientes (
 );
 
 SELECT * FROM clientes;
-delete from clientes WHERE id = 2;
+DELETE FROM clientes WHERE id = 2;

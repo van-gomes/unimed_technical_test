@@ -13,7 +13,6 @@ class ClienteRepository {
         $query = 'INSERT INTO clientes(nome, email, possui_plano, nome_plano) VALUES(:nome, :email, :possui_plano, :nome_plano)';
         $stmt = $this->conexao->prepare($query);
     
-        // Força a conversão para UTF-8, evitando problemas com UCS-2 do SQL Server
         $nome = mb_convert_encoding($this->cliente->getNome(), "UTF-8", "auto");
         $email = mb_convert_encoding($this->cliente->getEmail(), "UTF-8", "auto");
         $nomePlano = mb_convert_encoding($this->cliente->getNomePlano(), "UTF-8", "auto");
