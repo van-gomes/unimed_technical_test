@@ -1,0 +1,50 @@
+# Ignorar arquivos de ambiente e senhas
+.env
+.env.local
+.env.*.local
+*.env
+
+# Ignorar pastas de configuração local
+.vscode/
+.idea/
+
+# Ignorar arquivos de banco de dados e scripts locais
+*.sql
+*.sqlite
+*.bak
+*.db
+
+# Ignorar arquivos compactados
+*.zip
+*.tar.gz
+*.rar
+
+# Ignorar logs e arquivos temporários
+*.log
+*.tmp
+*.temp
+
+# Ignorar diretórios de cache
+vendor/
+node_modules/
+__pycache__/
+.cache/
+.tmp/
+.DS_Store
+
+# Ignorar configurações do sistema operacional
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Docker
+docker-compose.override.yml
+Dockerfile.local
+*.pid
+*.sock
+
+# Arquivos pessoais
+*senha*
+*password*
+*credencial*
+*acesso*

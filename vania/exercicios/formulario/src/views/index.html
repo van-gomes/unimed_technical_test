@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="../styles/styles.css">
     <title>Formulário Unimed</title>
 </head>
@@ -11,7 +12,7 @@
     </header>
     
     <main class="container-main"> 
-        <form id="myForm" action="inserir_cliente.php" method="POST">
+        <form id="myForm" action="../controllers/inserir_cliente.php" method="POST">
             <label for="nome">Nome:</label><br>
             <input type="text" id="nome" name="nome" required><br>
      
@@ -33,16 +34,15 @@
 
     <script>
         function validateForm(e) {
-            e.preventDefault();
-            
             const nome = document.getElementById("nome").value;
-            
+
             if (nome.length < 10 || nome.length > 80) {
+                e.preventDefault();
                 alert("Nome inválido! O nome deve ter entre 10 e 80 caracteres.");
                 return false;
             }
-            
-            alert("Formulário enviado com sucesso!");
+
+            // Se o nome for válido, permite o envio normal
             return true;
         }
         

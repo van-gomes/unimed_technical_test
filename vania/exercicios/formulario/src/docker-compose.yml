@@ -1,0 +1,9 @@
+version: "3.3"
+
+services:
+  php-sqlsrv:
+    build: .
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www/html

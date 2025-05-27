@@ -6,9 +6,9 @@ error_reporting(E_ALL);
 // Exibir o diretório atual para depuração
 echo "Diretório atual: " . __DIR__ . "<br>";
 
-require '../../config/Conexao.php';
-require '../models/Cliente.php';
-require '../services/ClienteService.php';
+require_once __DIR__ . '/../config/conexao.php';
+require_once __DIR__ . '/../models/Cliente.php';
+require_once __DIR__ . '/../repositories/ClienteRepository.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nome = $_POST['nome'];
@@ -18,11 +18,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $cliente = new Cliente($nome, $email, $possuiPlano, $nomePlano);
     $conexao = new Conexao();
-    $clienteService = new ClienteService($conexao, $cliente);
+    $clienteService = new ClienteRepository($conexao, $cliente);
 
     $clienteService->inserir();
 
+    echo "Cliente inserido com sucesso!";
     exit();
 }
-
 ?>
